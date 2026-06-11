@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="8dp">
+
+    <!-- Date column -->
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_muted"
+        android:textSize="13sp"
+        android:lineSpacingExtra="2dp" />
+
+    <!-- Event cards column -->
+    <LinearLayout
+        android:id="@+id/eventCardsContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical" />
+
+</LinearLayout>
