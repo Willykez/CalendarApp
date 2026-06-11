@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <TextView
+        android:id="@+id/tvMonthName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:paddingBottom="4dp" />
+
+    <!-- Weekday headers -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="S" android:textColor="@color/text_muted"
+            android:textSize="9sp" android:gravity="center" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="M" android:textColor="@color/text_muted"
+            android:textSize="9sp" android:gravity="center" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="T" android:textColor="@color/text_muted"
+            android:textSize="9sp" android:gravity="center" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="W" android:textColor="@color/text_muted"
+            android:textSize="9sp" android:gravity="center" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="T" android:textColor="@color/text_muted"
+            android:textSize="9sp" android:gravity="center" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="F" android:textColor="@color/text_muted"
+            android:textSize="9sp" android:gravity="center" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="S" android:textColor="@color/text_muted"
+            android:textSize="9sp" android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Day cells grid (6 rows × 7 cols = 42 TextViews, set in code) -->
+    <com.calendar.app.ui.year.MiniMonthGridView
+        android:id="@+id/miniMonthGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
