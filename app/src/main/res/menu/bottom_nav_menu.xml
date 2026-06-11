@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_year"
+        android:icon="@drawable/ic_year"
+        android:title="Year" />
+    <item
+        android:id="@+id/nav_month"
+        android:icon="@drawable/ic_month"
+        android:title="Month" />
+    <item
+        android:id="@+id/nav_week"
+        android:icon="@drawable/ic_week"
+        android:title="Week" />
+    <item
+        android:id="@+id/nav_agenda"
+        android:icon="@drawable/ic_agenda"
+        android:title="Agenda" />
+</menu>
