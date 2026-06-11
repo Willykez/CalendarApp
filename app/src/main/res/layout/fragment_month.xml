@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tvMonthTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_primary"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/btnPrevMonth"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_chevron_left"
+                        android:tint="@color/text_muted" />
+
+                    <ImageButton
+                        android:id="@+id/btnNextMonth"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_chevron_right"
+                        android:tint="@color/text_muted" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvYearSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_muted"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnSearch"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_search"
+                android:tint="@color/text_primary" />
+
+            <ImageButton
+                android:id="@+id/btnSettings"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_settings"
+                android:tint="@color/text_primary" />
+        </LinearLayout>
+
+        <!-- Weekday headers -->
+        <LinearLayout
+            android:id="@+id/weekdayHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="4dp">
+
+            <!-- Week number spacer -->
+            <TextView
+                android:layout_width="28dp"
+                android:layout_height="wrap_content"
+                android:text=""  />
+
+            <TextView android:id="@+id/wdSun" android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Sun" android:textColor="@color/text_muted"
+                android:textSize="12sp" android:gravity="center" />
+            <TextView android:id="@+id/wdMon" android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Mon" android:textColor="@color/text_muted"
+                android:textSize="12sp" android:gravity="center" />
+            <TextView android:id="@+id/wdTue" android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Tue" android:textColor="@color/text_muted"
+                android:textSize="12sp" android:gravity="center" />
+            <TextView android:id="@+id/wdWed" android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Wed" android:textColor="@color/text_muted"
+                android:textSize="12sp" android:gravity="center" />
+            <TextView android:id="@+id/wdThu" android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Thu" android:textColor="@color/text_muted"
+                android:textSize="12sp" android:gravity="center" />
+            <TextView android:id="@+id/wdFri" android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Fri" android:textColor="@color/text_muted"
+                android:textSize="12sp" android:gravity="center" />
+            <TextView android:id="@+id/wdSat" android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Sat" android:textColor="@color/text_muted"
+                android:textSize="12sp" android:gravity="center" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider" />
+
+        <!-- Month grid (custom view) -->
+        <com.calendar.app.ui.month.MonthGridView
+            android:id="@+id/monthGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="8dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginTop="8dp" />
+
+        <!-- Selected day label -->
+        <TextView
+            android:id="@+id/tvSelectedDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="4dp"
+            android:textColor="@color/text_muted"
+            android:textSize="14sp" />
+
+        <!-- Events for selected day -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDayEvents"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="80dp"
+            android:clipToPadding="false" />
+
+        <!-- Empty state -->
+        <LinearLayout
+            android:id="@+id/emptyState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="32dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/ic_calendar_empty"
+                android:tint="@color/text_muted" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/no_events"
+                android:textColor="@color/text_muted"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- FAB + Today -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:paddingBottom="8dp">
+
+        <Button
+            android:id="@+id/btnToday"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:text="@string/today"
+            android:textColor="@color/text_primary"
+            android:backgroundTint="@color/card_dark" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/card_dark"
+            android:src="@drawable/ic_add"
+            app:tint="@color/text_primary" />
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
